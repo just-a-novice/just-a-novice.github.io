@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>归档: 2022/10 |  jan&#39;s Blog</title>
+      <title>22.10.27刷题记录 |  jan&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -53,94 +53,175 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-22-10-27刷题记录"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">2022/10</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  22.10.27刷题记录
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/27/22-10-27%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2022-10-27T14:25:28.000Z" itemprop="datePublished">2022-10-27</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">214</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/27/22-10-27%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  <time datetime="2022-10-27T14:25:28.000Z" itemprop="datePublished">10/27</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/27/22-10-27%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"
-    >22.10.27刷题记录</a> 
-</h2>
- 
+    <div class="tocbot"></div>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/26/22-10-26%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  <time datetime="2022-10-26T15:13:04.000Z" itemprop="datePublished">10/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/26/22-10-26%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"
-    >22.10.26刷题记录</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  <time datetime="2022-10-26T07:14:30.000Z" itemprop="datePublished">10/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
-    >我的第一篇博客</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="AND-Sorting"><a href="#AND-Sorting" class="headerlink" title="AND Sorting"></a><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1682/B">AND Sorting</a></h1><p>题目大意:<br>给定一段长度为$n$的<strong>排列</strong>$p$(<em>permutation, from 0 to n-1, each  number occurs exactly once</em>),给定两个规则：</p>
+<ul>
+<li>选定$i,j(1\leq i&lt;j\leq n)$满足$p_i\&amp;p_j=X$</li>
+<li>交换$p_i,p_j$</li>
+</ul>
+<p>要求求出能将$p$变成非递减序列的最大$X$.<br>我们可以这样想，要是$p$中有两个数需要交换$a&lt;-&gt;b$,此时还有一个数$X$在位置$c$$(X永远都会存在于p中)$，则我们有如下策略去进行交换：</p>
+<ul>
+<li>$p_i\&amp;p_j=X_1,p_i与p_j直接交换$</li>
+<li>$寻找一个数X满足p_i\&amp;X=X,p_j\&amp;X=X,先交换p_i与X，再交换X与p_j$</li>
+</ul>
+<p>我们可以很容易证明两种策略得到的$X$均相同,否则$X_1=(1&lt;&lt;k)$$(k为X的位数)$。</p>
+<script type="math/tex; mode=display">p_i\&X\&p_j=X=X_1\&X</script><p>所以我们只需要把$(1&lt;<k)$与所有需要交换的数*AND*起来即可。
+代码：
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IOS ios_base::sync_with_stdio(0); cin.tie(0);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line">string s;</span><br><span class="line"><span class="type">int</span> m;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line">ll k;ll x;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n+<span class="number">3</span>)</span></span>;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; tm;<span class="type">int</span> maxx=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> ans=(<span class="number">1</span>&lt;&lt;<span class="number">30</span>)<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;v[i];</span><br><span class="line">        <span class="keyword">if</span>(v[i]!=i)&#123;</span><br><span class="line">            ans&amp;=v[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//if(maxx==INF)maxx=0;</span></span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    IOS</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="剩下的明天再写吧Orz"><a href="#剩下的明天再写吧Orz" class="headerlink" title="剩下的明天再写吧Orz."></a>剩下的明天再写吧Orz.</h1><h1 id="Circular-Local-MiniMax"><a href="#Circular-Local-MiniMax" class="headerlink" title="Circular Local MiniMax"></a><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1685/A">Circular Local MiniMax</a></h1><h1 id="A-B-C-Sort"><a href="#A-B-C-Sort" class="headerlink" title="A-B-C Sort"></a><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1674/D">A-B-C Sort</a></h1><h1 id="Unequal-Array"><a href="#Unequal-Array" class="headerlink" title="Unequal Array"></a><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1672/C">Unequal Array</a></h1> 
+      <!-- reward -->
       
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKElEQVR42u3aQXLjMAwEwPz/094HOLZmQG1VDLdOqciW2MwBAYY/P/H1eLqe7776zfO38qe9+u6ruzdf2NjY2B/Cfry93n8mf9p7cI7Jv3uxWmxsbOx17FcveP+ZvES1d5Pqk68TGxsbG/u8nLSkVy1K8kZsbGxs7LZInDQb7VAp33RsbGzsb2O37UG79KRpyYf+bZODjY2NvZudp6J//+f/km9jY2Nj/2H2o7xmRaIdLbUtUK3AxsbGXsQ+H9nnY6C7Wp1Zm4GNjY29m51Hue3gPt+I9qBPEgBELQo2Njb2h7PzIf7sKM+sBM7alXxbsbGxsXez8yA2/6d/1jDkG5GPtLCxsbG/gT07WDOLCtoQIi9jF8UMGxsbexF7FqDeG9bOjt0kq7oonNjY2Ngr2PU45uDozMlG58Fw4sLGxsbex24PzdwVIbQF765NxMbGxt7Kbl8/K3V5DDwbKkVDMWxsbOxF7HxMk/PyYVMbG9/1RmxsbOxN7JPRT35YJ5/Jnzy5aKiwsbGxF7HPxzp3BbonR4KS1WJjY2NvZbcBbd4ezGKGWfBchxnY2NjYi9izFiIfvudNTrJZ+Uqid2FjY2OvYOdFKB/x5z1QXghnWxDN0rCxsbFXsJPltgcu7zqImbOLY53Y2NjYi9izsf5d4cFsQ/NyeLE12NjY2CvYJwOjk9OMOWk28BoGA9jY2NiL2CfFrI1y82j5pNT90oFhY2Njr2C3ReVkKW24m98931ZsbGzsHexZ4Nouq0W2o//6XdjY2Ngr2G1JSIZKJwdr7gqeLzYRGxsbezU7v1pqEh7kLcfs6A82Njb2N7DbodJJcJvAZk+42CxsbGzsdex8qNQGq21jMxtp1SEHNjY29gr2o7xmvHxo1T4h/7Nd/J2xsbGxP5Y9Gx615S1ZSttsvN+CWciBjY2N/bnsvGjlIUHy4lm5OomBsbGxsXezk6FMDk6alvaQ0FEFzk93YmNjY38BO2lI2iakLY03BMzY2NjYX8xua0FbwM5rUJFvY2NjYy9itwOgkzLTNjZ5bJCHB9jY2Nib2OcTmHsP9OSRc9vGYGNjY69j/wOwUqbi9FnLuwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
   </div>
-  
-  
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/10/26/22-10-26%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">22.10.26刷题记录</div>
+      </a>
+    
+  </nav>
 
   
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -279,6 +360,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
