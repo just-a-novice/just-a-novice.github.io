@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[22.10.26刷题记录]]></title>
-      <url>/blog/2022/10/26/22-10-26%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+      <url>/2022/10/26/22-10-26%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<h1 id="1694B-Paranoid-String"><a href="#1694B-Paranoid-String" class="headerlink" title="1694B Paranoid String"></a>1694B <a href="https://codeforces.com/problemset/problem/1694/B">Paranoid String</a></h1><p>题目大意：<br>有一个01字符串，我们可以作以下操作：</p>
 <ul>
 <li>对于子串$01$，将其变成$1$</li>
@@ -36,7 +36,7 @@
     
     <entry>
       <title><![CDATA[我的第一篇博客]]></title>
-      <url>/blog/2022/10/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+      <url>/2022/10/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>折腾了一晚上终于搭建好自己的博客了orz,后面还打了一场热身赛，<br>太简单了……<br>后续会在上面更新每天的刷题心得与思考的，一起加油。</p>
 ]]></content>
       
