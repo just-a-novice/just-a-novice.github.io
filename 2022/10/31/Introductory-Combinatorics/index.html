@@ -81,7 +81,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">850</span>
+            <span class="post-count">845</span>
         </span>
     </span>
 
@@ -105,13 +105,13 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>我们来读一下组合数学$Introductory Combinatorics$</p>
+  <p>我们来读一下组合数学$Introductory\ Combinatorics$</p>
 <hr>
 <h1 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h1><h2 id="ep1-棋盘的完美覆盖"><a href="#ep1-棋盘的完美覆盖" class="headerlink" title="ep1:棋盘的完美覆盖"></a>ep1:棋盘的完美覆盖</h2><p>考虑如果有一个$8 \times 8$的棋盘，要用$dominoes$来完全覆盖$(perfect\ cover)$，<br>每个$dominoe$可以覆盖连续的两个方格，我们可以很快的构造出许多不同的方案来满足。<br>但是如果将这个棋盘扩展到$n\times m$呢？我们又怎么知道是否有一种方案满足。</p>
 <p>我们可以把一个$dominoe$看作一片半黑半白的方块：<br><img src="g1-1.jpg" alt="dominoe"><br>再把方块填入棋盘的空格，然后把棋盘的其中一个方块涂黑，再放下一个$dominoe$，但下一个$dominoe$的黑色部分不能与棋盘上的黑色方块相邻，这样的策略是允许$dominoe$可以选择竖着放还是横着放，颜色状态都是同相同的：<br><img src="g1-2.jpg" alt="摆放策略"></p>
 <p>这样我们只需要在最后统计黑白颜色方块个数是否相等即可。<br>但如果我们把$dominoes$扩展成$b-ominoes$(由$b$个方块组成，$dominoe$又为$2-ominoes$)呢？</p>
-<p>我们正常放$b-ominoes$在$n\times m$的棋盘里的每一行，可能每一行都会有些空格长度$r&lt;b$，或者放在每一列都会有留空$s&lt;b$，此时可以列出:<script type="math/tex">n=pb+s</script> <script type="math/tex">m=qb+r</script></p>
-<p>此时我们可以把棋盘分成三部分:<br><img src="g1-3.jpg" alt=""><br>第一部分:上方区域$qb \times n$大小<br>第二部分:左下方区域$r \times pb$大小<br>第三部分:右下方区域$r \times s$大小</p>
+<p>我们正常放$b-ominoes$在$n\times m$的棋盘里的每一行，可能每一行都会有些空格长度$r&lt;b$，或者放在每一列都会有留空$s&lt;b$，此时可以列出:</p>
+<script type="math/tex; mode=display">n=pb+s</script><script type="math/tex; mode=display">m=qb+r</script><p>此时我们可以把棋盘分成三部分:<br><img src="g1-3.jpg" alt=""><br>第一部分:上方区域$qb \times n$大小<br>第二部分:左下方区域$r \times pb$大小<br>第三部分:右下方区域$r \times s$大小</p>
 <p>此时我们可以看出，如果要棋盘可以被完全覆盖，第三部分的$r \times s$的每一行或每一列的所有元素要出现一次，即：$r \times s =r \times b或r \times s =s \times b$</p>
 <p>可以得到:$r=b$或$s=b$，即$n与m$至少一个是$b$的倍数，此时棋盘可以被$b-ominoes$完全覆盖。</p>
 <h2 id="ep2-幻方-Magic-Square"><a href="#ep2-幻方-Magic-Square" class="headerlink" title="ep2: 幻方($Magic\ Square$)"></a>ep2: 幻方($Magic\ Square$)</h2><p>幻方是一个$n \times n$的矩阵，其中矩阵的每一行之和，每一列之和，每一对角线之和都相等，那我们应该怎样才能构造一个幻方。<br>下面给出$de\ la\ loubere$构造$n$为奇数的幻方的方法:<br>先把$1$放在最上面的行的中间，然后按自然数顺序放置下一个数，将其按斜向上的方向放在当前数的对角线上，下面是边界处理：</p>
@@ -125,7 +125,7 @@
 <p>将二维幻方推广到三维幻方，我们可以计算出每行每列每对角线的和：</p>
 <script type="math/tex; mode=display">n^2 \times s=\frac{n^3(n^3+1)}{2}->s=\frac{n^4+n}{2}</script><p>此时我们可以证明出当$n=3$时不存在幻方。<br>假设：</p>
 <script type="math/tex; mode=display">\begin{bmatrix}a & b & c\\ d & y & e \\ f & g & h\end{bmatrix}</script><p>此时可以列出:</p>
-<script type="math/tex; mode=display">a+y+h=42$$$$d+y+e=42$$$$f+y+c=42$$$$a+d+f=42$$$$c+e+h=42</script><p>可以得到$y=14$，也就意味着对于每一个面，中间的元素一定要是$14$，但是每个地方的数字是不能重复的，因此矛盾。</p>
+<script type="math/tex; mode=display">a+y+h=42</script><script type="math/tex; mode=display">d+y+e=42</script><script type="math/tex; mode=display">f+y+c=42</script><script type="math/tex; mode=display">a+d+f=42</script><script type="math/tex; mode=display">c+e+h=42</script><p>可以得到$y=14$，也就意味着对于每一个面，中间的元素一定要是$14$，但是每个地方的数字是不能重复的，因此矛盾。</p>
 <p>今天到这了，还没洗澡。 (/ﾟДﾟ)/</p>
 <hr>
 <p>更新于22.10.31</p>
