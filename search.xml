@@ -128,4 +128,33 @@
 <h1 id="Hemose-Shopping"><a href="#Hemose-Shopping" class="headerlink" title="Hemose Shopping"></a><a href="https://codeforces.com/problemset/problem/1592/B">Hemose Shopping</a></h1><p><img src="d.jpg" alt=""><br>这个题目可以把$x$具体为一个可以移动的区间，类似于拿一块长条遮住数组中任意连续的长度为$x-1$(因为是$|i-j|\geq x -&gt;等于也能满足$)的区间，然后区间的两边可以交换，即左能去右，右能去左，但是被遮住的部分不能移动，因此可以推出，当$x&lt;=n/2$时一定是每个位置都相互连通。然后考虑当$x&gt;n/2$时的极限情况，长条在数组最左边和最右边覆盖的交集就是无论长条如何移动都不能进行交换的位置，因此只需考虑这个区间是否有序即可。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bit/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IOS ios_base::sync_with_stdio(0); cin.tie(0);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> All(a) a.begin(),a.end()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> t;string s;<span class="type">int</span> m;<span class="type">int</span> n;ll k;ll x;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;x;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="type">int</span> xx;cin&gt;&gt;xx,v.<span class="built_in">push_back</span>(xx);</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v2;v2=v;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;n<span class="number">-1</span>&amp;&amp;!<span class="built_in">is_sorted</span>(<span class="built_in">All</span>(v)))&#123;cout&lt;&lt;<span class="string">&quot;NO\n&quot;</span>;<span class="keyword">return</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=n/<span class="number">2</span>||x&lt;=<span class="number">1</span>)&#123;cout&lt;&lt;<span class="string">&quot;YES\n&quot;</span>;<span class="keyword">return</span>;&#125;</span><br><span class="line">    <span class="built_in">sort</span>(<span class="built_in">All</span>(v));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=n-x;i&lt;=x<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v2[i]!=v[i])&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;NO\n&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    IOS</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Introductory Combinatorics</title>
+    <url>/2022/10/31/Introductory-Combinatorics/</url>
+    <content><![CDATA[<p>我们来读一下组合数学$Introductory Combinatorics$</p>
+<hr>
+<h1 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h1><h2 id="ep1-棋盘的完美覆盖"><a href="#ep1-棋盘的完美覆盖" class="headerlink" title="ep1:棋盘的完美覆盖"></a>ep1:棋盘的完美覆盖</h2><p>考虑如果有一个$8 \times 8$的棋盘，要用$dominoes$来完全覆盖$(perfect\ cover)$，<br>每个$dominoe$可以覆盖连续的两个方格，我们可以很快的构造出许多不同的方案来满足。<br>但是如果将这个棋盘扩展到$n\times m$呢？我们又怎么知道是否有一种方案满足。</p>
+<p>我们可以把一个$dominoe$看作一片半黑半白的方块：<br><img src="g1-1.jpg" alt="dominoe"><br>再把方块填入棋盘的空格，然后把棋盘的其中一个方块涂黑，再放下一个$dominoe$，但下一个$dominoe$的黑色部分不能与棋盘上的黑色方块相邻，这样的策略是允许$dominoe$可以选择竖着放还是横着放，颜色状态都是同相同的：<br><img src="g1-2.jpg" alt="摆放策略"></p>
+<p>这样我们只需要在最后统计黑白颜色方块个数是否相等即可。<br>但如果我们把$dominoes$扩展成$b-ominoes$(由$b$个方块组成，$dominoe$又为$2-ominoes$)呢？</p>
+<p>我们正常放$b-ominoes$在$n\times m$的棋盘里的每一行，可能每一行都会有些空格长度$r&lt;b$，或者放在每一列都会有留空$s&lt;b$，此时可以列出:<script type="math/tex">n=pb+s</script> <script type="math/tex">m=qb+r</script></p>
+<p>此时我们可以把棋盘分成三部分:<br><img src="g1-3.jpg" alt=""><br>第一部分:上方区域$qb \times n$大小<br>第二部分:左下方区域$r \times pb$大小<br>第三部分:右下方区域$r \times s$大小</p>
+<p>此时我们可以看出，如果要棋盘可以被完全覆盖，第三部分的$r \times s$的每一行或每一列的所有元素要出现一次，即：$r \times s =r \times b或r \times s =s \times b$</p>
+<p>可以得到:$r=b$或$s=b$，即$n与m$至少一个是$b$的倍数，此时棋盘可以被$b-ominoes$完全覆盖。</p>
+<h2 id="ep2-幻方-Magic-Square"><a href="#ep2-幻方-Magic-Square" class="headerlink" title="ep2: 幻方($Magic\ Square$)"></a>ep2: 幻方($Magic\ Square$)</h2><p>幻方是一个$n \times n$的矩阵，其中矩阵的每一行之和，每一列之和，每一对角线之和都相等，那我们应该怎样才能构造一个幻方。<br>下面给出$de\ la\ loubere$构造$n$为奇数的幻方的方法:<br>先把$1$放在最上面的行的中间，然后按自然数顺序放置下一个数，将其按斜向上的方向放在当前数的对角线上，下面是边界处理：</p>
+<ul>
+<li>当到达最上面的行时，则下一个数放在最下面一行(按原本的方向)，然后在当前位置继续  </li>
+<li>当到达最右边时，放到最左边。</li>
+<li>如果下一个位置已经有数了，则直接放在当前数的下方。</li>
+</ul>
+<p>(别问我，我不知道原理)</p>
+<p><img src="g1-4.jpg" alt="5*5幻方"></p>
+<p>将二维幻方推广到三维幻方，我们可以计算出每行每列每对角线的和：</p>
+<script type="math/tex; mode=display">n^2 \times s=\frac{n^3(n^3+1)}{2}->s=\frac{n^4+n}{2}</script><p>此时我们可以证明出当$n=3$时不存在幻方。<br>假设：</p>
+<script type="math/tex; mode=display">\begin{bmatrix}a & b & c\\ d & y & e \\ f & g & h\end{bmatrix}</script><p>此时可以列出:</p>
+<script type="math/tex; mode=display">a+y+h=42$$$$d+y+e=42$$$$f+y+c=42$$$$a+d+f=42$$$$c+e+h=42</script><p>可以得到$y=14$，也就意味着对于每一个面，中间的元素一定要是$14$，但是每个地方的数字是不能重复的，因此矛盾。</p>
+<p>今天到这了，还没洗澡。 (/ﾟДﾟ)/</p>
+<hr>
+<p>更新于22.10.31</p>
+]]></content>
+  </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-10-30T15:58:29.351Z</updated>
+  <updated>2022-10-31T14:16:15.701Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Introductory Combinatorics</title>
+    <link href="https://just-a-novice.github.io/2022/10/31/Introductory-Combinatorics/"/>
+    <id>https://just-a-novice.github.io/2022/10/31/Introductory-Combinatorics/</id>
+    <published>2022-10-31T13:05:07.000Z</published>
+    <updated>2022-10-31T14:16:15.701Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我们来读一下组合数学$Introductory Combinatorics$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;Chapter-1&quot;&gt;&lt;a href=&quot;#Chapter-1&quot; class=&quot;headerlink&quot; title=&quot;Chapter 1&quot;&gt;&lt;/a&gt;Chapter</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>22.10.30刷题记录</title>
