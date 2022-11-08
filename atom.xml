@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-04T15:21:18.727Z</updated>
+  <updated>2022-11-08T15:43:15.016Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CodeTon round3(div1+div2)</title>
+    <link href="https://just-a-novice.github.io/2022/11/08/CodeTon-round3-div1-div2/"/>
+    <id>https://just-a-novice.github.io/2022/11/08/CodeTon-round3-div1-div2/</id>
+    <published>2022-11-08T06:58:10.000Z</published>
+    <updated>2022-11-08T15:43:15.016Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这场$A,B$直接秒了，$C,D$有难度，再后面就不是我能做的了&lt;/p&gt;
+&lt;h1 id=&quot;A-Indirect-Sort&quot;&gt;&lt;a href=&quot;#A-Indirect-Sort&quot; class=&quot;headerlink&quot; title=&quot;A. Indirect</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>22.11.4刷题记录</title>
