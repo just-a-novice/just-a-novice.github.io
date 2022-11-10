@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-10T02:51:30.089Z</updated>
+  <updated>2022-11-10T03:08:43.233Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>games专题</title>
+    <link href="https://just-a-novice.github.io/2022/11/10/games%E4%B8%93%E9%A2%98/"/>
+    <id>https://just-a-novice.github.io/2022/11/10/games%E4%B8%93%E9%A2%98/</id>
+    <published>2022-11-10T02:53:55.000Z</published>
+    <updated>2022-11-10T03:08:43.233Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这个专题咱们来玩点有意思的小游戏&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;22.11.10更新&lt;/p&gt;
+&lt;h1 id=&quot;Swap-Game&quot;&gt;&lt;a href=&quot;#Swap-Game&quot; class=&quot;headerlink&quot; title=&quot;Swap Game&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>dp训练</title>
