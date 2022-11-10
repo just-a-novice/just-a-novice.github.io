@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-08T15:46:35.141Z</updated>
+  <updated>2022-11-10T02:51:30.089Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>dp训练</title>
+    <link href="https://just-a-novice.github.io/2022/11/09/dp%E8%AE%AD%E7%BB%83/"/>
+    <id>https://just-a-novice.github.io/2022/11/09/dp%E8%AE%AD%E7%BB%83/</id>
+    <published>2022-11-09T12:14:59.000Z</published>
+    <updated>2022-11-10T02:51:30.089Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;虽然说是dp训练，但是还是挺多题目没怎么用dp的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;22.11.10更新&lt;/p&gt;
+&lt;h1 id=&quot;Making-Towers&quot;&gt;&lt;a href=&quot;#Making-Towers&quot; class=&quot;headerlink&quot; title=&quot;Making</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>CodeTon round3(div1+div2)</title>
     <link href="https://just-a-novice.github.io/2022/11/08/CodeTon-round3-div1-div2/"/>
     <id>https://just-a-novice.github.io/2022/11/08/CodeTon-round3-div1-div2/</id>
     <published>2022-11-08T06:58:10.000Z</published>
-    <updated>2022-11-08T15:46:35.141Z</updated>
+    <updated>2022-11-09T13:55:20.880Z</updated>
     
     
       
