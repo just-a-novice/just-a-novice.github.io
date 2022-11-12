@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-11T03:58:14.066Z</updated>
+  <updated>2022-11-12T08:14:09.442Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -17,18 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>扩展欧几里得</title>
+    <link href="https://just-a-novice.github.io/2022/11/11/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/"/>
+    <id>https://just-a-novice.github.io/2022/11/11/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/</id>
+    <published>2022-11-11T13:08:07.000Z</published>
+    <updated>2022-11-12T08:14:09.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;22.11.12更新&lt;/p&gt;
+&lt;p&gt;扩展欧几里得算法的原理是和欧几里得算法($gcd$)一样的.&lt;/p&gt;
+&lt;h1 id=&quot;gcd&quot;&gt;&lt;a href=&quot;#gcd&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>更新日志</title>
     <link href="https://just-a-novice.github.io/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     <id>https://just-a-novice.github.io/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
     <published>2022-11-10T03:11:43.000Z</published>
-    <updated>2022-11-11T03:58:14.066Z</updated>
+    <updated>2022-11-11T13:35:01.484Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;/p&gt;
+    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;/p&gt;
 </summary>
         
       
@@ -67,7 +91,7 @@
     <link href="https://just-a-novice.github.io/2022/11/09/dp%E8%AE%AD%E7%BB%83/"/>
     <id>https://just-a-novice.github.io/2022/11/09/dp%E8%AE%AD%E7%BB%83/</id>
     <published>2022-11-09T12:14:59.000Z</published>
-    <updated>2022-11-11T03:57:48.438Z</updated>
+    <updated>2022-11-12T08:05:21.608Z</updated>
     
     
       

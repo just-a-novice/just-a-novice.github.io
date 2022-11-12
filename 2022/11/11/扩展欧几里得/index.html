@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>更新日志 |  jan&#39;s Blog</title>
+      <title>扩展欧几里得 |  jan&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-更新日志"
+  id="post-扩展欧几里得"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  更新日志
+  扩展欧几里得
 </h1>
  
 
@@ -73,15 +73,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" class="article-date">
-  <time datetime="2022-11-10T03:11:43.000Z" itemprop="datePublished">2022-11-10</time>
+      <a href="/2022/11/11/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/" class="article-date">
+  <time datetime="2022-11-11T13:08:07.000Z" itemprop="datePublished">2022-11-11</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">17</span>
+            <span class="post-count">991</span>
         </span>
     </span>
 
@@ -90,20 +90,52 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>2022-11-10:games,dp<br>2022-11-11:dp<br>2022-11-12:扩展欧几里得,dp</p>
+  <hr>
+<p>22.11.12更新</p>
+<p>扩展欧几里得算法的原理是和欧几里得算法($gcd$)一样的.</p>
+<h1 id="gcd"><a href="#gcd" class="headerlink" title="$gcd$:"></a>$gcd$:</h1><p>这个算法是用来求最大公因数的：<br>对于$a,b$，假设$a&gt;b$，设$r=a\%b$，$k=gcd(a,b)$，那么有$r=a-b\times q$，此时$r$是$a,b$的线性组合，那么$r$一定可以被$k$整除，记作</p>
+<script type="math/tex; mode=display">gcd(a,b)|a\%b</script><p>又$b$能被$k$整除</p>
+<script type="math/tex; mode=display">gcd(a,b)|b</script><p>可以得到</p>
+<script type="math/tex; mode=display">gcd(a,b)|gcd(b,a\%b)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)</script><p>设$c=gcd(b,a\%b)$，由于$a=b\times q+r$，$a$是$b$和$a\%b$的线性组合，因此有</p>
+<script type="math/tex; mode=display">gcd(b,a\%b)|a</script><p>由于又有</p>
+<script type="math/tex; mode=display">gcd(b,a\%b)|b</script><p>所以</p>
+<script type="math/tex; mode=display">gcd(b,a\%b)|gcd(a,b)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (2)</script><p>由$(1)(2)$可以得到<script type="math/tex">gcd(a,b)=gcd(b,a\%b)</script></p>
+<p>从这个公式不断进行递归，直到$b=0$时，$a$就是最大公因数。</p>
+<h1 id="扩展欧几里得-extend-gcd"><a href="#扩展欧几里得-extend-gcd" class="headerlink" title="扩展欧几里得$(extend\ gcd)$:"></a>扩展欧几里得$(extend\ gcd)$:</h1><p>扩欧定理是利用$gcd$的原理来对诸如$ax+by=m$的方程进行求解。<br>我们可以知道，对于方程$ax+by=gcd(a,b)$一定存在整数$x,y$使得方程成立，证明如下：令$c=gcd(a,b)$，对于$a,b$，可以写成$a=k_1 \times c,b=k_2 \times c$，因此有</p>
+<script type="math/tex; mode=display">ax+by=(k_1 x+k_2 y)c=c \ \ \ \ (1)</script><p>所以一定存在整数$x,y$使得方程成立，且有无穷多个解。<br>而回到$ax+by=m$，由上面我们可以知道，假如$m=k\times gcd(a,b)$，那么方程一定有解。假如$m\%gcd(a,b)=m\%c=t\neq 0$，那么将$(1)$式代入，无论如何都不能找到$(k_1,k_2)$使得等式成立，通过这个我们可以验证一个方程是否有解。</p>
+<p>接下来介绍如何利用扩欧来对方程进行求解。<br>我们手上有一个方程$ax+by=gcd(a,b)$，由$gcd$的性质可以转化为</p>
+<script type="math/tex; mode=display">ax+by=gcd(b,a\%b)=bx+(a\%b)y</script><p>又有</p>
+<script type="math/tex; mode=display">a\%b=a-\lfloor \frac{a}{b}\rfloor\times b</script><p>代入得到</p>
+<script type="math/tex; mode=display">ax+by=ay+b(x-\lfloor\frac{a}{b}\rfloor\times by)</script><p>令</p>
+<script type="math/tex; mode=display">ax+by=ax'+by'</script><p>则得到</p>
+<script type="math/tex; mode=display">x'=y\\ y'=x-\lfloor\frac{a}{b}\rfloor\times by</script><p>我们发现直到$b=0$时，$gcd(a,b)=a$，也就是这个时刻停止，此时$ax+0=a$，得到$x=1,y=0$，然后进行回溯。</p>
+<p>但是如果是形如$ax+by=m$的呢？过程是一样的，不过最后要按照前文检验是否有解，并把方程的$x,y$进行转换。<br>先将其化成$a\frac{cx}{m}+b\frac{cy}{m}=c$的形式，其中$c=gcd(a,b)$，$ax+by=m$最后求得的是$(\frac{cx}{m},\frac{cy}{m})$而不是$(x,y)$<br>模板：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">exgcd</span><span class="params">(ll a,ll b,ll &amp;x,ll &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll d=<span class="built_in">exgcd</span>(b,a%b,x,y);</span><br><span class="line">    ll k=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=k-a/b*y;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="青蛙的约会"><a href="#青蛙的约会" class="headerlink" title="青蛙的约会"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1516">青蛙的约会</a></h2><p>把题目翻译过来，就是要让我们求解$(x+km)\%L=(y+kn)\%L$，可以转换为</p>
+<script type="math/tex; mode=display">(x+km)-(y+kn)=Lt(t\geq 0)</script><script type="math/tex; mode=display">k(n-m)+Lt=x-y</script><p>令$a=n-m,b=L,c=x-y$就得到熟悉的形式</p>
+<script type="math/tex; mode=display">ak+bt=e</script><p>然后用$exgcd$求解，检验是否有解，把$(k,t)$转换，一通操作行云流水，然后发现<font color="red">$WA$</font>了(；′⌒`)<br>这题的坑在于要求的是最小正整数解。<br>那么要怎么取得最小的$k$且保证$k\geq 0$呢？<br>先假设有</p>
+<script type="math/tex; mode=display">ax+by=c\\ ax_0+by_0=c</script><p>相减得到</p>
+<script type="math/tex; mode=display">a(x-x_0)=-b(y-y_0)</script><p>两边同时除以$gcd(a,b)$得到</p>
+<script type="math/tex; mode=display">\frac{a}{gcd(a,b)}(x-x_0)=-\frac{b}{gcd(a,b)}(y-y_0)</script><p>由于</p>
+<script type="math/tex; mode=display">gcd(\frac{a}{gcd(a,b)},\frac{b}{gcd(a,b)})=1</script><p>所以$(x-x_0)$可以整除$\frac{b}{gcd(a,b)}$因此有</p>
+<script type="math/tex; mode=display">p\times \frac{b}{gcd(a,b)}=(x-x_0)\\ x=x_0+p\times \frac{b}{gcd(a,b)}</script><p>由此可以知道，只要我们知道一个特解，就可以求出其他所有解。<br>对于这题而言，我们最终求得了一个$k$将其转化为标准的解$x$后还需要将$x$对$\frac{b}{gcd(a,b)}$取模取得最小的$|k|$如果$k<0$则还需要再加上一个$\frac{b}{gcd(a,b)}$再取一次模。
+但是这还不够，要保证$k$是正数，还要保证$\frac{b}{gcd(a,b)}>0$也就是当$a<0$时，把$a,e$取反，而$b$不用变，因为$y$可以为负数。
+代码：
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IOS ios_base::sync_with_stdio(0); cin.tie(0);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> All(a) a.begin(),a.end()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 100005</span></span><br><span class="line"><span class="function">ll <span class="title">exgcd</span><span class="params">(ll a,ll b,ll &amp;x,ll &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll d=<span class="built_in">exgcd</span>(b,a%b,x,y);</span><br><span class="line">    ll k=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=k-a/b*y;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x,y,m,n,l;</span><br><span class="line">    cin&gt;&gt;x&gt;&gt;y&gt;&gt;m&gt;&gt;n&gt;&gt;l;</span><br><span class="line">    ll a=n-m,b=x-y;</span><br><span class="line">    <span class="comment">//if(a&lt;0)&#123;a=-a;b=-b;&#125;</span></span><br><span class="line">    ll k1,k2;</span><br><span class="line">    ll ans= <span class="built_in">exgcd</span>(a,l,k1,k2);</span><br><span class="line">    k1=((k1*(b/ans))%(l/ans)+l/ans)%(l/ans);</span><br><span class="line">    <span class="keyword">if</span>(b%ans)cout&lt;&lt;<span class="string">&quot;Impossible\n&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> cout&lt;&lt;k1&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这题解写了一天(；′⌒`)，啥都没干。</p>
  
       <!-- reward -->
       
@@ -174,7 +206,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3ay24CMQwFUP7/p+m2UsX0+pEpqGdWiELIySJ2bT8e8fP89iTvJ9/6+frVd69/ZeHBw8PDG2z91XLJzySf3zqmZM94eHh4p3nJdq8P5Xor1/d2EgzycIKHh4f3brwEMF8zCQx4eHh4n8LrBYbkiv/guIeHh/cvebtLP4MnOaze+nh4eHineXkX6X1eH+nv4eHh4Y276r3LOk+7t4YJXu4WDw8P7wAvv3CrCXF1DKtatigMh+Hh4eEd4yWDUNef7JVl8zDQK53g4eHhneDtXsrVizsvwvaOCQ8PD+8EbxIYegl0b4SrGWbw8PDwVnnVpHnUnt8qLuTr4OHh4R3g5ZtIEu78uq+WcXvFDjw8PLxzvEIxtHVmW+MFzVIIHh4e3iqvurnJKMBkQKE5joCHh4f3R7x5ipyHliSEFA4ODw8P70ZePuR0/d1JeEjS91+OBg8PD+8Yr5cib+GrISpP9/Hw8PDO8fJ0OW96TVpf8xCCh4eHd46XBIl8E8nmeu2uhQCDh4eHt8pLNpQAJp/Mw0P5cPHw8PBWeb1N9AoEvUOsFiai/xjw8PDwBry8/llta/W2Wy1GJGMNeHh4eCd4eRtsYRBqXLZIghYeHh7ePbxeQytvmFWT9WrJOKq14OHh4R3gzcuy1cT3+v0kaY6GBvDw8PAO8PILd9Iwq5Yteg0wPDw8vDt5eXMrWTof26q2uwoJOh4eHt4qbxIG8gJBXphIDqvwVzw8PLwDvN5IU15WqA5dJUWHXuEYDw8Pb5eXBINqUaCaQG8NE+Dh4eHdyZuUHpqtqaWEuFlrwcPDw7uR17vQJ1d8b1gBDw8P73141TGpXgjJCx+FoSs8PDy8VV61UDsZvaoWiCfr4+Hh4Z3gzf/hr7JzRp5SN2F4eHh4tXe+AM93u2ASQFrAAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADK0lEQVR42u3aS27bQBAFQN//0so2QUDnvW4qMEfFlSCPyKkR4FZ/vr7i6/XX9fv7V2uu1l/d4eqd5Flf77iwsbGxH8LebHe2/uqd/CA2R4+NjY19KjsPGPmnrg43iSn5muGusLGxsT+Ynfz0n20uxyfBDBsbGxs7TxvaBCM/glkqgo2Njf2Z7KRI1BZ08mA2C1f/qZaGjY2N/ePZm5/7P+31W/rb2NjY2D+Y/VpcbSqyaeLO2rqXO8fGxsY+iJ03cTcBI09ykuPIkyVsbGzsT2DnjYH81htM3u5NWsWX72BjY2MfxG4fkzd686Zv3aAdhdWoN4KNjY39QHZeHro3Ybg3FambzdjY2NgHsfPt5mHj+zvMAlXbhC5KYNjY2NgHse8KEvkW24RnX/CKSkvY2NjYj2Uni9phnaRE1d6hbfEW7QFsbGzsB7I3D7i34bppS9SpETY2NvZB7E0Ay9u6m4PI79mmK9jY2Ngnsfct3ry43w5ZtqWl4p7Y2NjYB7HbJm6bKiQB8rW4hlRsbGzsQ9mzIv6woDMqVLWNimEww8bGxn4gu71RG9jab2BWKqq/YWxsbOwj2LOUYJbYtC2EttFbFLmwsbGxj2DPij6b0JUfR1s2KgaMsLGxsQ9iz/6ft7z9KE8OXjV3sbGxsR/IblOC7x82Sw9mIXO2N2xsbOyz2cnrNrS0a5KDyI/s8rixsbGxD2XnG32VVx5a2r+2w0bY2NjYp7Lb4Zh9Eb+t8+wHjP5Yg42NjX0oOwlg+xSlbcfmO0mCKDY2NvbZ7FlZZ9Yw3ndgZ6OZ2NjY2OexkxCy/+nfrrwr+fnHcWNjY2Mfwd6U2mevc8a+DXxpxMbGxj6IvRncyTF5MtOWnzaJDTY2NvYZ7NnwTZ3rvG0cZ3b02NjY2Cex22CQDNzk4zuz1vIsKZqFQGxsbOynsNuglTdx939Nvqs20GJjY2Ofys5HcPJSTj5S0x7NDTvBxsbG/kj2Jswkn5oNDw3XY2NjY38kOx9zzINW+6nZ3oo+MDY2NvZj2XkjNtlWGw7fF6j+EcCwsbGxj2Dnjd7vw9XsaO5anxSksLGxsY9j/wI2ZDATesysLAAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -185,19 +217,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/11/11/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            扩展欧几里得
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/11/10/games%E4%B8%93%E9%A2%98/" class="article-nav-link">
+      <a href="/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">games专题</div>
+        <div class="article-nav-title">更新日志</div>
       </a>
     
   </nav>
