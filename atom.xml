@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-14T14:51:59.690Z</updated>
+  <updated>2022-11-15T04:19:18.208Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://just-a-novice.github.io/2022/11/14/Cf-Round-833-div2/"/>
     <id>https://just-a-novice.github.io/2022/11/14/Cf-Round-833-div2/</id>
     <published>2022-11-14T09:55:29.000Z</published>
-    <updated>2022-11-14T14:51:59.690Z</updated>
+    <updated>2022-11-15T04:19:18.208Z</updated>
     
     
       
@@ -43,7 +43,7 @@
     <link href="https://just-a-novice.github.io/2022/11/14/trie-%E5%AD%97%E5%85%B8%E6%A0%91/"/>
     <id>https://just-a-novice.github.io/2022/11/14/trie-%E5%AD%97%E5%85%B8%E6%A0%91/</id>
     <published>2022-11-14T09:03:37.000Z</published>
-    <updated>2022-11-14T12:47:02.190Z</updated>
+    <updated>2022-11-15T03:27:38.456Z</updated>
     
     
       
@@ -51,7 +51,8 @@
         
         
     <summary type="html">&lt;p&gt;先挖个坑\\&lt;br&gt;有空来填&lt;/p&gt;
-&lt;h2 id=&quot;题目链接1&quot;&gt;&lt;a href=&quot;#题目链接1&quot; class=&quot;headerlink&quot; title=&quot;题目链接1&quot;&gt;&lt;/a&gt;&lt;a</summary>
+&lt;hr&gt;
+&lt;p&gt;字典树是一种多叉树，用于储存字符串信息，查询字符串信息的数据结构，有一个根节点，如果字符以26个字母组成，那么每个节点都有26个子节点。&lt;br&gt;直接看板子：&lt;br&gt;&lt;figure class=&quot;highlight</summary>
         
       
     
@@ -89,14 +90,14 @@
     <link href="https://just-a-novice.github.io/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
     <id>https://just-a-novice.github.io/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
     <published>2022-11-10T03:11:43.000Z</published>
-    <updated>2022-11-14T09:05:03.724Z</updated>
+    <updated>2022-11-15T03:30:06.160Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;br&gt;2022-11-14:Cf Round 833</summary>
+    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;br&gt;2022-11-14:Cf Round 833 div2&lt;br&gt;2022-11-15:trie 字典树，Cf Round 833</summary>
         
       
     
