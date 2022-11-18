@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-15T13:51:36.732Z</updated>
+  <updated>2022-11-18T08:13:13.095Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更新日志</title>
+    <link href="https://just-a-novice.github.io/2022/11/18/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    <id>https://just-a-novice.github.io/2022/11/18/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
+    <published>2022-11-18T03:11:43.000Z</published>
+    <updated>2022-11-18T08:13:13.095Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;br&gt;2022-11-14:Cf Round 833 div2&lt;br&gt;2022-11-15:trie 字典树，Cf Round 833</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>dp训练</title>
@@ -122,27 +143,6 @@
 &lt;p&gt;22.11.12更新&lt;/p&gt;
 &lt;p&gt;扩展欧几里得算法的原理是和欧几里得算法($gcd$)一样的.&lt;/p&gt;
 &lt;h1 id=&quot;gcd&quot;&gt;&lt;a href=&quot;#gcd&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>更新日志</title>
-    <link href="https://just-a-novice.github.io/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
-    <id>https://just-a-novice.github.io/2022/11/10/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
-    <published>2022-11-10T03:11:43.000Z</published>
-    <updated>2022-11-15T13:52:10.025Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;br&gt;2022-11-14:Cf Round 833 div2&lt;br&gt;2022-11-15:trie 字典树，Cf Round 833</summary>
         
       
     
