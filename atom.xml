@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-18T08:13:13.095Z</updated>
+  <updated>2022-11-18T10:14:32.499Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>中国剩余定理(CRT)</title>
+    <link href="https://just-a-novice.github.io/2022/11/18/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86-CRT/"/>
+    <id>https://just-a-novice.github.io/2022/11/18/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86-CRT/</id>
+    <published>2022-11-18T08:32:41.000Z</published>
+    <updated>2022-11-18T10:14:32.499Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;要学习$CRT$我们先来了解一下乘法逆元.&lt;br&gt;对于形如:&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Mt\equiv 1 (mod \ p)&lt;/script&gt;&lt;p&gt;我们称 $t$ 为 ：$M$ 在模 $p$</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>更新日志</title>
@@ -42,7 +64,7 @@
     <link href="https://just-a-novice.github.io/2022/11/15/dp%E8%AE%AD%E7%BB%83/"/>
     <id>https://just-a-novice.github.io/2022/11/15/dp%E8%AE%AD%E7%BB%83/</id>
     <published>2022-11-15T12:14:59.000Z</published>
-    <updated>2022-11-15T13:51:36.732Z</updated>
+    <updated>2022-11-18T10:25:40.714Z</updated>
     
     
       
