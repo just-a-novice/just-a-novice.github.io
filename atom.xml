@@ -6,7 +6,7 @@
   <link href="https://just-a-novice.github.io/atom.xml" rel="self"/>
   
   <link href="https://just-a-novice.github.io/"/>
-  <updated>2022-11-18T10:14:32.499Z</updated>
+  <updated>2022-12-11T14:04:24.169Z</updated>
   <id>https://just-a-novice.github.io/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更新日志</title>
+    <link href="https://just-a-novice.github.io/2022/12/11/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+    <id>https://just-a-novice.github.io/2022/12/11/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
+    <published>2022-12-11T14:04:43.000Z</published>
+    <updated>2022-12-11T14:04:24.169Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;br&gt;2022-11-14:Cf Round 833 div2&lt;br&gt;2022-11-15:trie 字典树，Cf Round 833</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>构造题</title>
+    <link href="https://just-a-novice.github.io/2022/12/11/%E6%9E%84%E9%80%A0%E9%A2%98/"/>
+    <id>https://just-a-novice.github.io/2022/12/11/%E6%9E%84%E9%80%A0%E9%A2%98/</id>
+    <published>2022-12-11T12:44:42.000Z</published>
+    <updated>2022-12-11T14:00:29.720Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;22.12.11更新&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;打完杭州开摆一周后再次更新了捏。\\&lt;br&gt;几天没做已经不会做题了，小做几题热热手。&lt;/p&gt;
+&lt;h2 id=&quot;AND-Sequences&quot;&gt;&lt;a href=&quot;#AND-Sequences&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>中国剩余定理(CRT)</title>
@@ -30,27 +75,6 @@
         
     <summary type="html">&lt;p&gt;要学习$CRT$我们先来了解一下乘法逆元.&lt;br&gt;对于形如:&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;Mt\equiv 1 (mod \ p)&lt;/script&gt;&lt;p&gt;我们称 $t$ 为 ：$M$ 在模 $p$</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>更新日志</title>
-    <link href="https://just-a-novice.github.io/2022/11/18/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
-    <id>https://just-a-novice.github.io/2022/11/18/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</id>
-    <published>2022-11-18T03:11:43.000Z</published>
-    <updated>2022-11-18T08:13:13.095Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;2022-11-10:games,dp&lt;br&gt;2022-11-11:dp&lt;br&gt;2022-11-12:扩展欧几里得,dp&lt;br&gt;2022-11-14:Cf Round 833 div2&lt;br&gt;2022-11-15:trie 字典树，Cf Round 833</summary>
         
       
     

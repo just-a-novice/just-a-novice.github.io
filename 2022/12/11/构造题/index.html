@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>更新日志 |  jan&#39;s Blog</title>
+      <title>构造题 |  jan&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-更新日志"
+  id="post-构造题"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  更新日志
+  构造题
 </h1>
  
 
@@ -73,15 +73,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/11/18/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" class="article-date">
-  <time datetime="2022-11-18T03:11:43.000Z" itemprop="datePublished">2022-11-18</time>
+      <a href="/2022/12/11/%E6%9E%84%E9%80%A0%E9%A2%98/" class="article-date">
+  <time datetime="2022-12-11T12:44:42.000Z" itemprop="datePublished">2022-12-11</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">48</span>
+            <span class="post-count">719</span>
         </span>
     </span>
 
@@ -90,20 +90,29 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>2022-11-10:games,dp<br>2022-11-11:dp<br>2022-11-12:扩展欧几里得,dp<br>2022-11-14:Cf Round 833 div2<br>2022-11-15:trie 字典树，Cf Round 833 div2，dp<br>2022-11-18:正在准备icpc杭州站，暂时停更。(；′⌒`)</p>
+  <p>22.12.11更新</p>
+<hr>
+<p>打完杭州开摆一周后再次更新了捏。\\<br>几天没做已经不会做题了，小做几题热热手。</p>
+<h2 id="AND-Sequences"><a href="#AND-Sequences" class="headerlink" title="AND Sequences"></a><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1513/B">AND Sequences</a></h2><p>半个月没更新差点markdown都不会写了( ･⊝･)</p>
+<p>我们可以从目标序列入手，也就是 $good\ permutations$ 所表示的 $a_{p_1}…a_{p_n}$。<br>将其设为 $b_1…b_n$ ，然后根据题目，我们可以知道有 </p>
+<script type="math/tex; mode=display">b_1=b_2 \& b_3 \& ...\& b_n</script><script type="math/tex; mode=display">b_1 \& b_2 = b_3 \& ...\& b_n</script><script type="math/tex; mode=display">\vdots</script><script type="math/tex; mode=display">b_1 \& b_2 \& ...\& b_{n-1}=b_n</script><p>我们现在令 $pref_i=b_1 \&amp; …\&amp; b_i$ , $suff_i=b_{i+1} \&amp; …\&amp; b_n$ .<br>显然对于 $\&amp;$ 运算，有 $a \&amp; b \leq a$ ，因此有 $pref_{i+1} \leq pref_i\ ,\ suff_i \leq suff_{i+1}$ 。然后根据题目的要求，我们又有 $pref_i=suff_{i+1}$ ，于是我们可以写出如下式子：</p>
+<script type="math/tex; mode=display">pref_{i+1} \leq pref_i =suff_{i+1} \leq suff_{i+2}</script><p>然后根据 $pref_{i+1}=suff_{i+2}$ ，可以得到:</p>
+<script type="math/tex; mode=display">pref_{i}=pref_{i+1}\ ,\ suff_i=suff_{i+1}</script><script type="math/tex; mode=display">b_1=pref_{i}=suff_i=b_n</script><p>我们最后得到了上式的结论，但题目问的是有多少个这样的序列，因此还要考虑如何构造。<br>我们可以这样想，假如 $ b_1$ 确定了，那么 $b_n,pref_i,suff_i$ 也确定了，由于 $pref_i=b_1$ ,因此 $b_2…b_{n-1}$ 的顺序如何都是不影响的，简单来说就是 $b_1\&amp; b_2=b_1$ 使得 $b_1\&amp; b_2 \&amp; b_3=b_1\&amp; b_3=b_1$ ，也就是说，序列 $ b$ 只要满足 $b_1=b_n,b_1\&amp;b_i=b_1$ ，那么这个序列就是满足条件的。<br>那么问题就变成了怎么找到 $b_1$ 。对于 $b_1\&amp; b_i$ 我们知道 $a\&amp;b \leq a$ 也就是说，一定有 $b_1 \leq b_i$ 因为 $b_i\&amp;b_1=b_1$ ,此时根据 $a\&amp;b \leq a$ 应有 $b_i\&amp;b_1=b_1 \leq b_i$ 。因此，如果序列存在，那么 $b_1$ 一定是序列中最小的数。然后选出最小的数后只需要统计这个数字有多少个，然后判断是否满足 $b_1\&amp; b_i=b_1$，再使用组合数学中的排列组合解决即可。<br>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IOS ios_base::sync_with_stdio(0); cin.tie(0);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x3f3f3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PLL pair<span class="string">&lt;ll,ll&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> All(a) a.begin(),a.end()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 100005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)cin &gt;&gt; v[i];</span><br><span class="line">    <span class="comment">//选出最小的数</span></span><br><span class="line">    <span class="type">int</span> minn = *<span class="built_in">min_element</span>(<span class="built_in">All</span>(v));</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i: v) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == minn)cnt++;</span><br><span class="line">        <span class="comment">//b1&amp;bi=b1</span></span><br><span class="line">        <span class="keyword">if</span> ((minn &amp; i) != minn) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;0\n&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ll fa = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//2...n-2的数排列</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">2</span>; i++)fa = fa * i % mod;</span><br><span class="line">    <span class="comment">//从cnt个最小的数选两个</span></span><br><span class="line">    ll ans = (<span class="number">1ll</span> * cnt * (cnt - <span class="number">1</span>)) % mod;</span><br><span class="line">    <span class="comment">//乘法原理</span></span><br><span class="line">    ans = <span class="number">1ll</span> * fa * ans % mod;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//#define LOCAL</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> LOCAL</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;input.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;output.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    IOS</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="comment">//t = 1;</span></span><br><span class="line">    <span class="comment">//makeF();</span></span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="comment">//getc(998244353);</span></span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure></p>
  
       <!-- reward -->
       
@@ -174,7 +183,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aQXLjMAwEQP3/095LDkntShkAhNeH5iklRxTbqRKRAa8rHq9v4yqOv+/6fuVuztfNuDYGHh4e3mDpd9NVrz9j7sAJNV8zHh4e3jYvWVbyafWFnt+bbyd4eHh4n8Z7fnBeXicbRvWJeHh4eJ/Jy4vsZHEfve/h4eHhPfLyqXvx63ORPQk1jmUteHh4eDFvXgq//+eV/h4eHh7euKs+b271tpn5lvM1Ax4eHt4CL3/h5gVxvsRqXFtdJx4eHt4eLw9qq7FFfpAr/0J70QkeHh7eBi9qJo1/Py+7e+Dr7HLx8PDwbu7t/fNfzVGrEUavRVc+GYGHh4dX5PVC20lT6lS4EM2Dh4eHt8brBbh566vX4srnWWl94eHh4T3yeqVzfle1XD4WheDh4eEt8HoHBc7+zjyoLafUeHh4eANe3o7KN4Bq6ZxvDOW2GR4eHt4ar/r4efuqGvXmX/qPGfDw8PCWefOYtRpMjKr+JIDAw8PDW+NNXr7V4ri6FfW2EDw8PLw93qnSdh7sJs22wxsMHh4eXouXL6gaK/QOE0y+xH9cx8PDw1vg5eVptfHf+3QeTETNMDw8PLwBr7foVzyqy62GEb/8MfDw8PDewustpdqamsQWSTSMh4eHt8fLo4Ecn7e7Ji2xwpEFPDw8vGVeHrbON5K8BE+OI0QpCx4eHt4Cb35EoDdbHh+XIw88PDy8Zd48zE0OSyX3VltftxY8PDy8o7xXceSv5vzwQR4ll7crPDw8vAVe70hTtR1VPZKVhyD50/Hw8PDO8vLNoLegecBR3Rjw8PDw3sPrNfjzwGKy8VTDiNHRATw8PLw1Xo6ZxArPM5T1eHh4eP+J1yum8zl7YfHhM2V4eHh4Aa/a9Hp+NScLPdU2+2VVeHh4eAu8ycGm6mu6yshL6iYMDw8Pr3blDwcQAyfouYMVAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aMXLDQAgF0Nz/0kmbmUTSBxbbxVPl0cjafS4WDHx9xdf3r+vvnd/3k2/9feb+u/erHLjw8PDwBlu/et3VAtVnqsj8x738CfDw8PDWeFcvTTaUB4b7VRJMvmc8PDy8z+H1wkPy/klqjoeHh/fJvCSpzY/1JFGuhiI8PDy81/DyV1cT37xgkYSHxVoLHh4eXszLu0if83mlv4eHh4c37qpXU9veG3pF4WgtPDw8vAVefuDmYwH3KXIvBR/tEw8PD2+BNx/Aui8H9AoHyep54MHDw8M7y0sO/Qk4H7GaJ9PNmIaHh4d3lJcc+ntpdHUnD/09PDw8vDEvT4urf/vz9n9e1KiWffHw8PD2eNWGVrUAkYSHSWH3ofWFh4eHt8DLT9S8qDqvCSTB6SEU4eHh4S3wes3+3mBrdb60mr7j4eHhvZd3X05Niq3VMJO3ysohAQ8PD+8or9pY6hVnq+XafMTqIZjh4eHhrfGqqXCzHRWPXh0uQODh4eGt8fLDehIY8rV6hY+oAYaHh4c34FULDfMNVVPtXmHiodeHh4eHd4iXLLwxktUr71ZXxMPDwzvFS8ZD5w3+attsUpj45x8DHh4e3lHefNM5KW+erSToeHh4eEd51TZYsvV84KA6TFAuneDh4eEt8/JlqsOjvfdMhrHw8PDwXs/rHfd5iaGwxcl+8PDw8NZ41aZXXkrIj/gkRa5+xsPDw9vjJaGiN5I1GdVKirkPz+Dh4eEd5X0Xr7yYmx/3Z1tul0NXeHh4eId4x0aa4lS4l443k2k8PDy8NV4SDHrFhVOHfnWYAA8PD+81vGS4qrpkLyRUY1cUGPDw8PDeyuuNGiRJdq8l9nAfDw8P7wN4eSmhyp4MIhxOqfHw8PACXnU0qlr8zZPyahB6WAUPDw9vgXfgD3+xt5Yz8pS6CcPDw8Or3fkBMfaccTpVDCAAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -185,19 +194,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/11/18/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86-CRT/" class="article-nav-link">
+      <a href="/2022/12/11/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            中国剩余定理(CRT)
+            更新日志
           
         </div>
       </a>
     
     
-      <a href="/2022/11/15/dp%E8%AE%AD%E7%BB%83/" class="article-nav-link">
+      <a href="/2022/11/18/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86-CRT/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">dp训练</div>
+        <div class="article-nav-title">中国剩余定理(CRT)</div>
       </a>
     
   </nav>
@@ -608,22 +617,6 @@
     
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
 </body>
 
 </html>
