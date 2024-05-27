@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关键词热度分析</title>
+    <script src='js/echarts.min.js'></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/echarts-wordcloud.js"></script>
+    <style>
+        select {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container" style="height: 100% ;width: 70%; background-color: white">
+        <select id="city" title="城市" onchange="changeAny()">
+            <option value="北京" selected>北京</option>
+            <option value="上海">上海</option>
+            <option value="深圳">深圳</option>
+            <option value="广州">广州</option>
+            <option value="杭州">杭州</option>
+            <option value="成都">成都</option>
+            <option value="南京">南京</option>
+            <option value="武汉">武汉</option>
+            <option value="西安">西安</option>
+            <option value="厦门">厦门</option>
+            <option value="长沙">长沙</option>
+            <option value="苏州">苏州</option>
+            <option value="天津">天津</option>
+            <option value="石家庄">石家庄</option>
+            <option value="太原">太原</option>
+            <option value="呼和浩特">呼和浩特</option>
+            <option value="沈阳">沈阳</option>
+            <option value="长春">长春</option>
+            <option value="哈尔滨">哈尔滨</option>
+            <option value="合肥">合肥</option>
+            <option value="福州">福州</option>
+            <option value="南昌">南昌</option>
+            <option value="济南">济南</option>
+            <option value="郑州">郑州</option>
+            <option value="南宁">南宁</option>
+            <option value="海口">海口</option>
+            <option value="重庆">重庆</option>
+            <option value="贵阳">贵阳</option>
+            <option value="昆明">昆明</option>
+            <option value="拉萨">拉萨</option>
+            <option value="兰州">兰州</option>
+            <option value="西宁">西宁</option>
+            <option value="银川">银川</option>
+            <option value="乌鲁木齐">乌鲁木齐</option>
+        </select>
+        <select id="features" title="类型" onchange="changeAny()">
+            <option value="city_name" selected>公司名称</option>
+            <option value="city_type">职业类型</option>
+            <option value="city_feature">职业特点</option>
+        </select>
+        <div id="content" style="margin-top: 20px;margin-left: 70px;">
+            <div id="maincy" style="width: 700px;height:500px"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    get();
+
+    function get() {
+        let cur = document.getElementById("city");
+        let Ccity = cur.options[cur.selectedIndex].value;
+        let curType = document.getElementById("features");
+        let Ctype = curType.options[curType.selectedIndex].value;
+        changeChart(Ccity, Ctype);
+    }
+
+
+    function changeAny() {
+        let objS = document.getElementById("city");
+        let city = objS.options[objS.selectedIndex].value;
+        let TobjS = document.getElementById("features");
+        let type = TobjS.options[TobjS.selectedIndex].value;
+        changeChart(city, type);
+    }
+
+
+    function getChart(json) {
+        let keywords = new Array();
+        var jsonData = json;
+        var cnt = 0;
+        for (var key in jsonData) {
+            var company_frequent = {};
+            company_frequent['name'] = key;
+            company_frequent['value'] = jsonData[key];
+            keywords[cnt] = company_frequent;
+            cnt = cnt + 1;
+        }
+        var jsonData = json;
+        let myChart = echarts.init(document.getElementById("maincy"));
+        let option = {
+            series: [{
+                type: 'wordCloud',
+                //maskImage: maskImage,
+                sizeRange: [15, 55],
+                rotationRange: [0, 0],
+                rotationStep: 45,
+                gridSize: 8,
+                shape: 'pentagon',
+                width: '90%',
+                height: '90%',
+                textStyle: {
+                    color: function () {
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 250),
+                            Math.round(Math.random() * 250),
+                            Math.round(Math.random() * 250)
+                        ].join(',') + ')';
+                    },
+                    fontFamily: 'sans-serif',
+                    fontWeight: 'normal',
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                data: keywords
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+    }
+
+    function changeChart(city, Type) {
+        console.log(Type);
+
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "json/".concat(Type, ".json"),
+            success: function (json) {
+                getChart(json[city]);
+            },
+            error: function (json) {}
+        });
+    }
+</script>
+
+</html>
