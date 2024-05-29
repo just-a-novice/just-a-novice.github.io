@@ -11,21 +11,19 @@
 </head>
 
 <body>
-<div class="container" style="height: 100% ;width: 70%; background-color: rgb(255, 255, 255)">
-    <!--这里利用bootstrap的样式：一个页面布局为12份，id=main的代码块展示我们的中国地图；
-                        class：col-md-9 代表这个div占9份；col-md-3 占3份-->
-    <div id="content-left" class="col-md-9" style="margin-top: 20px">
-        <form id="radioForm">
-            <input type="radio" name="dataOption" value="data1" style="font-size: 15px;" checked>
-            <p style="font-size: 14px;display: inline;"> 城镇单位从业人数</p>
-            <input type="radio" name="dataOption" value="data2" style="font-size: 15px;">
-            <p style="font-size: 14px;display: inline;"> 城镇私营和个体从业人数</p>
-        </form>
-        <div id="main" style="width: 800px;height:500px">
+    <div class="container" style="height: 90% ;width: 90%;padding-left: 110px;padding-top: 40px;">
+        <div id="content-left" style="margin-top: 10px">
+            <form id="radioForm">
+                <input type="radio" name="dataOption" value="data1" style="font-size: 15px;" checked>
+                <p style="font-size: 14px;display: inline;"> 城镇单位从业人数</p>
+                <input type="radio" name="dataOption" value="data2" style="font-size: 15px;">
+                <p style="font-size: 14px;display: inline;"> 城镇私营和个体从业人数</p>
+            </form>
+            <div id="main" style="width: 800px;height:500px">
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </body>
 <script>
     function get() {
@@ -57,20 +55,20 @@
             },
             //热力轴
             visualMap: [{
-                left: '12%',
-                bottom: '5%',
-                min: 10,
-                max: 1000,
-                calculable: true, // 是否显示拖拽控制器的手柄
-                realtime: true, // 拖拽时是否实时渲染图形
-                hoverLink: true,
-                text: ['从业人数(万)'],
-                seriesIndex: 1,
-                dimension: 2,
-                inRange: {
-                    color: ["aqua", '#63FF9CFF', 'yellow', 'orange', "red"]
-                }
-            },
+                    left: '12%',
+                    bottom: '5%',
+                    min: 10,
+                    max: 1000,
+                    calculable: true, // 是否显示拖拽控制器的手柄
+                    realtime: true, // 拖拽时是否实时渲染图形
+                    hoverLink: true,
+                    text: ['从业人数(万)'],
+                    seriesIndex: 1,
+                    dimension: 2,
+                    inRange: {
+                        color: ["aqua", '#63FF9CFF', 'yellow', 'orange', "red"]
+                    }
+                },
                 {
                     left: 'left',
                     bottom: '5%',
@@ -126,11 +124,11 @@
                 }
             },
             series: [{
-                name: "GDP",
-                type: "map",
-                geoIndex: 0,
-                data: [],
-            },
+                    name: "GDP",
+                    type: "map",
+                    geoIndex: 0,
+                    data: [],
+                },
                 //涟漪特效
                 {
                     name: "info",
