@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>页面布局</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.5.1.js"></script>
+
+    <style type='text/css'>
+        * {
+            padding: 5px;
+        }
+
+        .com {
+            height: 600px;
+            width: 900px;
+        }
+
+        body {
+            background-color: rgb(199, 239, 239);
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #box {
+            margin: 0 auto;
+            font-size: 0;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+        }
+
+        .maincontent {
+            width: 980px;
+            height: 764.4px;
+            background-color: #fff;
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+        }
+
+        .mycharts {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='box' style="margin: 50px 50px;">
+        <div class="menu-box" style="display: inline-block; vertical-align: top;">
+            <div class="menu">
+                <!-- 侧边栏的标题 开始-->
+                <div class="menu-title">
+                    <h1> 信息分析</h1>
+                </div>
+                <!-- 侧边栏的标题 结束-->
+                <!-- 每一项导航 -->
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item1">
+                    <label for="menu-item1">
+                        <i class="menu-item-icon iconfont icon-a-02-kechengguanli"></i>
+                        <span>招聘岗位信息分析</span>
+                        <i class="menu-item-last iconfont icon-down"></i>
+                    </label>
+                    <div class="menu-content">
+                        <span onclick="getchart1()">整体情况分析</span>
+                        <span onclick="getchart2()">难度系数分析</span>
+                        <span onclick="getchart3()">关键词热度分析</span>
+                        <span onclick="getchart4()">薪资水平分布分析</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item2">
+                    <label for="menu-item2">
+                        <i class="menu-item-icon iconfont icon-a-02-kechengguanli"></i>
+                        <span>城市就业与失业人数分析</span>
+                        <i class="menu-item-last iconfont icon-down"></i>
+                    </label>
+                    <div class="menu-content">
+                        <span onclick="getchart5()">就业人数/GDP分析</span>
+                        <span onclick="getchart6()">失业人数分析</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <label for="menu-item3">
+                        <i class="menu-item-icon iconfont icon-a-02-kechengguanli"></i>
+                        <span onclick="getchart7()">城市房价分析</span>
+                    </label>
+                </div>
+            </div>
+            <div class="set-line"></div>
+        </div>
+        <div class="maincontent">
+            <div class="com">
+                <div id="charts" class="mycharts">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function getchart1() {
+        console.log(1);
+        $('#charts').load('zhengtiqingkuang(a).html');
+    }
+
+    function getchart2() {
+        $('#charts').load('nandufenxi(a).html');
+    }
+
+    function getchart3() {
+        $('#charts').load('guanjianci(a).html');
+    }
+
+    function getchart4() {
+        $('#charts').load('xinzishuipingfenbu(a).html');
+    }
+
+    function getchart5() {
+        $('#charts').load('conyerenshu(a).html');
+    }
+
+    function getchart6() {
+        $('#charts').load('shiyerenshu(a).html');
+    }
+
+    function getchart7() {
+        $('#charts').load('fangjia(a).html');
+    }
+</script>
+
+</html>
