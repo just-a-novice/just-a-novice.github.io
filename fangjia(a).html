@@ -11,22 +11,21 @@
 </head>
 
 <body>
-<!--<div class="container" style="height: 100% ;width: 70%; background-color: white">-->
 
-<div id="content-left" style="margin-top: 0">
-    <form id="radioForm">
-        <input type="radio" name="dataOption" value="four" checked>
-        <p style="font-size: 14px; display: inline;"> 排名前四城市</p>
-        <input type="radio" name="dataOption" value="all">
-        <p style="font-size: 14px; display: inline;"> 展示其他城市</p>
-    </form>
-    <!--        <div id="mainfj" style="width: 700px;height:590px">
+    <div id="content-left" style="margin-top: 0;padding-left: 110px;padding-top: 40px;">
+        <form id="radioForm">
+            <input type="radio" name="dataOption" value="four" checked>
+            <p style="font-size: 14px; display: inline;"> 排名前四城市</p>
+            <input type="radio" name="dataOption" value="all">
+            <p style="font-size: 14px; display: inline;"> 展示其他城市</p>
+        </form>
+        <!--        <div id="mainfj" style="width: 700px;height:590px">
             </div>-->
-    <div id="mainfj" style="width: 800px;height:629px">
+        <div id="mainfj" style="width: 800px;height:629px">
+        </div>
     </div>
-</div>
 
-<!--</div>-->
+    <!--</div>-->
 </body>
 <script>
     get();
@@ -37,8 +36,18 @@
         let series_four = [];
         let series_other = [];
         let four = ['北京', '上海', '厦门', '深圳']
-        let selected_four = {'深圳': true, '北京': true, '上海': true, '厦门': true}
-        let selected_other = {'广州': true, '杭州': true, '成都': true, '南京': true}
+        let selected_four = {
+            '深圳': true,
+            '北京': true,
+            '上海': true,
+            '厦门': true
+        }
+        let selected_other = {
+            '广州': true,
+            '杭州': true,
+            '成都': true,
+            '南京': true
+        }
         //页面设置
         let option = {
             title: {
@@ -58,7 +67,9 @@
                     for (let i = 0; i < params.length; i++) {
                         // 绘制带有颜色的圆点
                         let color = params[i].color;
-                        let marker = '<span style="display:inline-block;margin-right:4px;border-radius:10px;width:2px;height:2px;background-color:' + color + ';"></span>';
+                        let marker =
+                            '<span style="display:inline-block;margin-right:4px;border-radius:10px;width:2px;height:2px;background-color:' +
+                            color + ';"></span>';
                         ans += marker + params[i].seriesName + "： " + params[i].value + "</br>";
                     }
                     return ans;
@@ -125,7 +136,9 @@
             });
         });
         myChart.on('datazoom', function (params) {
-            let param = {selected: myChart.getOption().legend[0].selected}
+            let param = {
+                selected: myChart.getOption().legend[0].selected
+            }
             let res = findMinAndMax(param)
             myChart.setOption({
                 yAxis: {
@@ -204,7 +217,9 @@
                     type: 'line',
                     stack: city,
                     data: [],
-                    emphasis: {focus: 'series'},
+                    emphasis: {
+                        focus: 'series'
+                    },
                     areaStyle: null
                 }
                 if (four.includes(city))
@@ -236,7 +251,14 @@
             option.legend.selected = selected_four;
             option.legend.data = four;
             myChart.setOption(option);
-            let params = {selected: {'北京': true, '上海': true, '厦门': true, '深圳': true}}
+            let params = {
+                selected: {
+                    '北京': true,
+                    '上海': true,
+                    '厦门': true,
+                    '深圳': true
+                }
+            }
             let res = findMinAndMax(params);
             option.yAxis.min = res.min;
             option.yAxis.max = res.max;
