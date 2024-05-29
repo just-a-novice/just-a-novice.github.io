@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -245,4 +246,253 @@
     }
 </script>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪资水平分布分析</title>
+    <script src='js/echarts.min.js'></script>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+
+
+
+<body style="background-color: #2c313a">
+    <div class="container" style="height: 100% ;width: 70%; background-color: white">
+        <div id="content" class="col-md-9" style="margin-top: 20px;margin-left: 70px;">
+            <div id="main" style="width: 800px;height:600px"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    getChart();
+
+    function getChart() {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "json/revenue_classify.json",
+            success: function (json) {
+                const colors2 = [
+                    '#9DC8C8',
+                    '#58C9B9',
+                    '#519D9E',
+                    '#D1B6E1',
+                    '#FFEEE4',
+                    '#F17F42',
+                    '#CE6D39',
+                    '#D4DFE6',
+                    '#8EC0E4',
+                    '#56A902',
+                    '#f15c5c',
+                    '#EFDC05',
+                    '#E53A40',
+                    '#566270',
+                    '#8CD790',
+                    '#F6B352',
+                    '#F68657',
+                    '#9055A2',
+                    '#011638',
+                    '#EC7357',
+                    '#8FBC94',
+                    '#44633F',
+                ];
+                var jsonData = json;
+                var cnt = 0;
+                allData = {
+                    '0': new Array,
+                    '1': new Array,
+                    '2': new Array,
+                    '3': new Array,
+                    '4': new Array,
+                    '5': new Array
+                }
+                for (var fkey in jsonData) {
+                    temp = new Array;
+                    cnt = 0;
+                    for (var key in jsonData[fkey]) {
+                        var allcity = {};
+                        allcity['value'] = jsonData[fkey][key];
+                        allcity['name'] = key;
+                        temp[cnt] = allcity;
+                        cnt = cnt + 1;
+                    }
+                    allData[fkey] = temp;
+                    console.log(temp);
+                }
+
+                let myChart = echarts.init(document.getElementById("main"));
+                let option = {
+                    tooltip: {
+                        trigger: "item",
+                        formatter: "{a} <br/>{b} : {d}%",
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: [
+                            '北京', '上海', '深圳', '广州', '杭州', '成都', '南京', '武汉', '西安', '厦门', '长沙', '苏州',
+                            '天津', '石家庄', '太原', '呼和浩特', '沈阳', '长春', '哈尔滨', '合肥', '福州', '南昌', '济南',
+                            '郑州', '南宁', '海口', '重庆', '贵阳', '昆明', '拉萨', '兰州', '西宁', '银川', '乌鲁木齐'
+                        ]
+                    },
+                    series: [{
+                            name: '一类(5910.87)',
+                            type: 'pie',
+                            radius: ['3%', '17%'],
+                            color: colors2,
+                            zlevel: 2,
+                            roseType: 'angle',
+                            hoverAnimation: true, //鼠标移入变大
+                            itemStyle: {
+                                normal: {
+                                    borderColor: "#FFFFFF",
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    label: {
+                                        show: false,
+                                        formatter: '{d}%'
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            data: allData['0']
+                        },
+                        {
+                            name: '二类(12208.01)',
+                            type: 'pie',
+                            radius: ['19%', '25%'],
+                            color: colors2,
+                            zlevel: 2,
+                            hoverAnimation: true, //鼠标移入变大
+                            roseType: 'angle',
+                            itemStyle: {
+                                normal: {
+                                    borderColor: "#FFFFFF",
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    label: {
+                                        show: false,
+                                        formatter: '{d}%'
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            data: allData['1']
+                        },
+                        {
+                            name: '三类(21502.27)',
+                            type: 'pie',
+                            radius: ['29%', '37%'],
+                            color: colors2,
+                            zlevel: 2,
+                            roseType: 'angle',
+                            hoverAnimation: true, //鼠标移入变大
+                            itemStyle: {
+                                normal: {
+                                    borderColor: "#FFFFFF",
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    label: {
+                                        show: false,
+                                        formatter: '{d}%'
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    },
+                                }
+                            },
+                            data: allData['2']
+                        },
+                        {
+                            name: '四类(30908.6)',
+                            type: 'pie',
+                            radius: ['40%', '46%'],
+                            color: colors2,
+                            zlevel: 2,
+                            roseType: 'angle',
+                            hoverAnimation: true, //鼠标移入变大
+                            itemStyle: {
+                                normal: {
+                                    borderColor: "#FFFFFF",
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    label: {
+                                        show: false,
+                                        formatter: '{d}%'
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            data: allData['3']
+                        },
+                        {
+                            name: '五类(42001.49)',
+                            type: 'pie',
+                            radius: ['49%', '57%'],
+                            color: colors2,
+                            zlevel: 2,
+                            roseType: 'angle',
+                            hoverAnimation: true, //鼠标移入变大
+                            itemStyle: {
+                                normal: {
+                                    borderColor: "#FFFFFF",
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    label: {
+                                        show: false,
+                                        formatter: '{d}%'
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            data: allData['4']
+                        },
+                        {
+                            name: '六类(69820.0)',
+                            type: 'pie',
+                            radius: ['60%', '73%'],
+                            color: colors2,
+                            zlevel: 2,
+                            roseType: 'angle',
+                            hoverAnimation: true, //鼠标移入变大
+                            itemStyle: {
+                                normal: {
+                                    borderColor: "#FFFFFF",
+                                    borderWidth: 1,
+                                    borderRadius: 4,
+                                    label: {
+                                        show: false,
+                                        formatter: '{d}%'
+                                    },
+                                    labelLine: {
+                                        show: true
+                                    }
+                                }
+                            },
+                            data: allData['5']
+                        },
+                    ]
+                };
+                myChart.setOption(option);
+            },
+            error: function (json) {}
+        });
+
+    }
+</script>
+
+>>>>>>> 7b2ab6ed14432fb06550485c56b0d19eb7eb1501
 </html>
