@@ -8,25 +8,44 @@
     <script src="js/echarts.min.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/dataTool.js"></script>
-    <style>
-        .content {
-            margin-top: 50px;
-        }
 
+    <style>
         .tabs {
-            width: 100%;
+            width: 1100px;
+            height: 600px;
+            color: rgb(96, 98, 102); /* 设置字体颜色为灰色 */
+            /*display: flex;*/
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            /*background-color: rgba(0,191,255, 0.075);*/
+            box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+            border: 2px rgba(255,255,255,0.4) solid;
+            border-bottom: 2px rgba(40,40,40,0.35) solid;
+            border-right: 2px rgba(40,40,40,0.35) solid;
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            flex-direction: column;
+            padding: 20px; /* 可根据需要调整内边距 */
+            transform: translate(-50%, -50%);
+
+/*            width: 100%;
             height: 600px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: inline-block;
+            background-color: rgba(0,191,255, 0.075);*/
         }
 
         input[type="radio"] {
             display: none;
         }
 
-        .tabs>label {
+        .tabs > label {
             padding: 15px;
             width: calc(100% / 4);
             text-align: center;
@@ -36,28 +55,29 @@
             box-sizing: border-box;
         }
 
-        .tabs>label {
+        .tabs > label {
             float: left;
         }
 
         .content {
+            margin-top: 50px;
             display: none;
             padding: 20px;
             border-top: 1px solid;
             animation: fadeIn 0.5s;
         }
 
-        #tab1:checked~#content1,
-        #tab2:checked~#content2,
-        #tab3:checked~#content3,
-        #tab4:checked~#content4 {
+        #tab1:checked ~ #content1,
+        #tab2:checked ~ #content2,
+        #tab3:checked ~ #content3,
+        #tab4:checked ~ #content4 {
             display: block;
         }
 
-        #tab1:checked+label,
-        #tab2:checked+label,
-        #tab3:checked+label,
-        #tab4:checked+label {
+        #tab1:checked + label,
+        #tab2:checked + label,
+        #tab3:checked + label,
+        #tab4:checked + label {
             border-bottom: 2px solid #007BFF;
             color: #007BFF;
         }
@@ -66,7 +86,6 @@
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -75,30 +94,30 @@
 </head>
 
 <body>
-    <div class="container" style="height: 90% ;width: 90%; padding-left: 110px;padding-top: 30px;">
-        <div class="tabs">
-            <input type="radio" name="tab" id="tab1" checked>
-            <label for="tab1" style="font-size: 14px;">工作性质</label>
-            <input type="radio" name="tab" id="tab2">
-            <label for="tab2" style="font-size: 14px;">工作经验</label>
-            <input type="radio" name="tab" id="tab3">
-            <label for="tab3" style="font-size: 14px;">团队规模</label>
-            <input type="radio" name="tab" id="tab4">
-            <label for="tab4" style="font-size: 14px;">所需学历</label>
-            <div class="content" id="content1">
-                <div id="chart1" style="width:700px; height:500px;"></div>
-            </div>
-            <div class="content" id="content2">
-                <div id="chart2" style="width: 700px; height:500px;"></div>
-            </div>
-            <div class="content" id="content3">
-                <div id="chart3" style="width: 700px; height:500px;"></div>
-            </div>
-            <div class="content" id="content4">
-                <div id="chart4" style="width: 700px; height:500px;"></div>
-            </div>
+<div class="container" style="height:90% ;width:90%; padding-left: 100px;padding-top: 30px;">
+    <div class="tabs">
+        <input type="radio" name="tab" id="tab1" checked>
+        <label for="tab1" style="font-size: 14px;">工作性质</label>
+        <input type="radio" name="tab" id="tab2">
+        <label for="tab2" style="font-size: 14px;">工作经验</label>
+        <input type="radio" name="tab" id="tab3">
+        <label for="tab3" style="font-size: 14px;">团队规模</label>
+        <input type="radio" name="tab" id="tab4">
+        <label for="tab4" style="font-size: 14px;">所需学历</label>
+        <div class="content" id="content1">
+            <div id="chart1" style="width:1000px; height:550px;"></div>
+        </div>
+        <div class="content" id="content2">
+            <div id="chart2" style="width: 1000px; height:550px;"></div>
+        </div>
+        <div class="content" id="content3">
+            <div id="chart3" style="width: 1000px; height:550px;"></div>
+        </div>
+        <div class="content" id="content4">
+            <div id="chart4" style="width: 1000px; height:550px;"></div>
         </div>
     </div>
+</div>
 </body>
 <script>
     getChart('attribute.json', 'chart1');
@@ -135,9 +154,9 @@
                     markLine: {
                         lineStyle: 'dotted',
                         data: [{
-                                name: '最大平均薪资',
-                                yAxis: 25002.57
-                            },
+                            name: '最大平均薪资',
+                            yAxis: 25002.57
+                        },
                             {
                                 name: '最小平均薪资',
                                 yAxis: 7694.08
@@ -184,9 +203,9 @@
                         ]
                     },
                     yAxis: [{
-                            type: 'value',
-                            name: '人数'
-                        },
+                        type: 'value',
+                        name: '人数'
+                    },
                         {
                             type: 'value',
                             name: '平均薪资',
@@ -194,10 +213,11 @@
                         }
                     ],
                     dataZoom: [{
-                            type: 'slider', // 这个 dataZoom 组件，默认控制 x 轴。
-                            start: 0,
-                            end: 20
-                        },
+                        type: 'slider', // 这个 dataZoom 组件，默认控制 x 轴。
+                        start: 0,
+                        end: 20,
+                        bottom: "5%",
+                    },
                         {
                             type: 'slider', // 这个 dataZoom 组件，也控制 y 轴。
                             yAxisIndex: 0,
