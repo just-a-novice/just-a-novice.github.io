@@ -10,7 +10,7 @@ body {
     left: 20px; /* 可根据需要调整距离左侧的距离 */
 }
 .glass-container{
-    width: 1100px;
+    width: 1000px;
     height: 600px;
     color: rgb(0, 0, 0);
     display: flex;
