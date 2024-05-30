@@ -5,10 +5,10 @@
 
 /* 白色主题 */
 :root {
-    --color-menu-bg: radial-gradient(27% 185%, #F9F6F1 0%, #D7D0C5 100%);
+    --color-menu-bg: linear-gradient(5deg,#A5DBED 8.62%,#FFFFFF 94.8%); 
     --font-color-mi: #000;
     --font-color-mi-hover: #1890ff;
-    --color-bg-mi-hover: #ececec;
+    --color-bg-mi-hover: #7cdaeb;
     --border-radius-mi: 2px;
     --transition-menu-time: 0.2s;
     --color-line-bg: #d3d3d3;
@@ -27,9 +27,10 @@
 } */
 
 .content {
-    background-image: linear-gradient(to bottom, #A3A29E 0%, #B1B0AC 27%, #BCBBB7 49%, #E5E4E0 76%, #F3F2F0 100%);
+    /*background-image: linear-gradient(to bottom, #A3A29E 0%, #B1B0AC 27%, #BCBBB7 49%, #E5E4E0 76%, #F3F2F0 100%);*/
     min-height: 100vh;
 }
+
 
 .menu-box {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -37,18 +38,22 @@
     font-weight: 600;
     position: relative;
     width: fit-content;
-    min-height: 100vh;
+    min-height: 95vh;
     padding: 6px 12px;
     box-sizing: border-box;
-    background-image: linear-gradient(to bottom, #A3A29E 0%, #B1B0AC 27%, #BCBBB7 49%, #E5E4E0 76%, #F3F2F0 100%);
+    /*background-image: linear-gradient(to bottom, #A3A29E 0%, #B1B0AC 27%, #BCBBB7 49%, #E5E4E0 76%, #F3F2F0 100%);*/
     border-radius: 20px;
+    border: 2px rgba(255,255,255,0.4) solid;
+    /*background-color: rgba(0,191,255, 0.075);*/
+    background: linear-gradient(5deg,#A5DBED 8.62%,#FFFFFF 94.8%); 
+
 }
 
 .menu-box input[type='checkbox'] {
     display: none;
 }
 
-.menu-box>label {
+.menu-box > label {
     position: absolute;
     top: 48%;
     right: 0;
@@ -57,7 +62,7 @@
     height: 20px;
     border-radius: 20px;
     box-shadow: 0px 0px 4px 0px #000;
-    background-image: linear-gradient(to bottom, #A3A29E 0%, #B1B0AC 27%, #BCBBB7 49%, #E5E4E0 76%, #F3F2F0 100%);
+    background-image: linear-gradient(5deg,#A5DBED 8.62%,#FFFFFF 94.8%); 
     color: var(--font-color-mi);
     display: flex;
     justify-content: center;
@@ -65,7 +70,7 @@
     overflow: hidden;
 }
 
-.menu-box>label>i {
+.menu-box > label > i {
     font-weight: 900;
     text-indent: -3px;
     font-size: 20px;
@@ -73,12 +78,12 @@
     transform: rotate(0deg);
 }
 
-.menu-box>label:hover {
-    box-shadow: 0px 0px 2px 0px #000;
+.menu-box > label:hover {
+    box-shadow: 0px 0px 2px 0px #7dd3cd;
     color: var(--font-color-mi-hover);
 }
 
-.menu-box>input#menu-btn:checked+label>i {
+.menu-box > input#menu-btn:checked + label > i {
     transform: rotate(180deg);
 }
 
@@ -92,7 +97,7 @@
     color: var(--font-color-mi);
 }
 
-.menu-box>input#menu-btn:checked~.menu {
+.menu-box > input#menu-btn:checked ~ .menu {
     width: 0;
 }
 
@@ -101,7 +106,7 @@
     margin-bottom: 10px;
 }
 
-.menu-item>label{
+.menu-item > label {
     position: relative;
     width: 100%;
     height: 50px;
@@ -112,21 +117,21 @@
     align-items: center;
 }
 
-.menu-item>label:hover {
+.menu-item > label:hover {
     color: var(--font-color-mi-hover);
 }
 
-.menu-item>label>i:first-child {
+.menu-item > label > i:first-child {
     flex: none;
     margin-right: 25px;
     font-size: 20px;
 }
 
-.menu-item>label>span {
+.menu-item > label > span {
     flex: 1;
 }
 
-.menu-item>label>i:last-child {
+.menu-item > label > i:last-child {
     flex: none;
     font-size: 25px;
     font-weight: 900;
@@ -134,7 +139,7 @@
     transition: transform var(--transition-menu-time);
 }
 
-.menu-item>input:checked+label>i:last-child {
+.menu-item > input:checked + label > i:last-child {
     transform: rotate(180deg);
 }
 
@@ -148,19 +153,19 @@
 }
 
 /* 选项，若 n 项，就 n * 40px */
-.menu-item>input#menu-item1:checked~.menu-content {
+.menu-item > input#menu-item1:checked ~ .menu-content {
     height: calc(4 * 35px);
 }
 
-.menu-item>input#menu-item2:checked~.menu-content {
+.menu-item > input#menu-item2:checked ~ .menu-content {
     height: calc(2 * 35px);
 }
 
-.menu-item>input#menu-item3:checked~.menu-content {
+.menu-item > input#menu-item3:checked ~ .menu-content {
     height: calc(3 * 40px);
 }
 
-.menu-content>span {
+.menu-content > span {
     width: 100%;
     text-indent: 60px;
     line-height: 28px;
@@ -168,7 +173,7 @@
     border-radius: var(--border-radius-mi);
 }
 
-.menu-content>span:hover {
+.menu-content > span:hover {
     background-color: var(--color-bg-mi-hover);
     color: var(--font-color-mi-hover);
 }
