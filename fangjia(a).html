@@ -3,35 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>房价分析</title>
     <script src="js/echarts.js"></script>
-    <!--    <script src="js/china.js"></script>-->
     <script src="js/jquery-3.5.1.js"></script>
-
+    <link rel="stylesheet" href="css/container.css">
 </head>
 
 <body>
 
-    <div id="content-left" style="margin-top: 0;padding-left: 110px;padding-top: 40px;">
-        <form id="radioForm">
-            <input type="radio" name="dataOption" value="four" checked>
-            <p style="font-size: 14px; display: inline;"> 排名前四城市</p>
-            <input type="radio" name="dataOption" value="all">
-            <p style="font-size: 14px; display: inline;"> 展示其他城市</p>
-        </form>
-        <!--        <div id="mainfj" style="width: 700px;height:590px">
-            </div>-->
-        <div id="mainfj" style="width: 800px;height:629px">
-        </div>
-    </div>
 
-    <!--</div>-->
+<!--<div id="container" style="height: 90% ;width: 90%;padding-left: 110px;padding-top: 40px; border: 2px solid black;border-radius: 10px;">
+    <form id="radioForm">
+        <input type="radio" name="dataOption" value="four" checked>
+        <p style="font-size: 14px; display: inline;"> 排名前四城市</p>
+        <input type="radio" name="dataOption" value="all">
+        <p style="font-size: 14px; display: inline;"> 展示其他城市</p>
+    </form>
+        <div id="main" style="width: 700px; height:500px;"></div>
+</div>-->
+
+
+<div class="glass-container" id="glass">
+    <form id="radioForm">
+        <input type="radio" name="dataOption" value="four" checked>
+        <p style="font-size: 14px; display: inline;"> 排名前四城市</p>
+        <input type="radio" name="dataOption" value="all">
+        <p style="font-size: 14px; display: inline;"> 展示其他城市</p>
+    </form>
+    <div id="main" style="width: 1000px; height:550px;"></div>
+</div>
+
+
+<!--</div>-->
 </body>
 <script>
     get();
 
     function get() {
-        var myChart = echarts.init(document.getElementById('mainfj'));
+        var myChart = echarts.init(document.getElementById('main'));
         let other = [];
         let series_four = [];
         let series_other = [];
@@ -79,9 +89,9 @@
                 type: 'slider',
                 start: 30,
                 end: 100,
-                left: '18%',
+                left: '14%',
                 right: 40,
-                bottom: '24%',
+                bottom: '10%',
             },
             legend: {
                 //顶部展示城市选项
@@ -104,10 +114,10 @@
                 }
             },
             grid: {
-                left: '12%',
+                left: '10%',
                 right: '4%',
                 top: '10%',
-                bottom: '30%',
+                bottom: '20%',
                 containLabel: true
             },
             xAxis: {
