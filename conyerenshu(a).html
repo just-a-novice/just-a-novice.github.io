@@ -7,10 +7,12 @@
     <script src="js/echarts.js"></script>
     <script src="js/china.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="css/container.css">
 
 </head>
 
 <body>
+<!--
     <div class="container" style="height: 90% ;width: 90%;padding-left: 110px;padding-top: 40px;">
         <div id="content-left" style="margin-top: 10px">
             <form id="radioForm">
@@ -22,7 +24,17 @@
             <div id="main" style="width: 800px;height:500px">
             </div>
         </div>
+    </div>
+-->
 
+    <div class="glass-container" id="glass">
+        <form id="radioForm">
+            <input type="radio" name="dataOption" value="data1" style="font-size: 15px;" checked>
+            <p style="font-size: 14px;display: inline;"> 城镇单位从业人数</p>
+            <input type="radio" name="dataOption" value="data2" style="font-size: 15px;">
+            <p style="font-size: 14px;display: inline;"> 城镇私营和个体从业人数</p>
+        </form>
+        <div id="main" style="width: 1000px; height:550px;"></div>
     </div>
 </body>
 <script>
@@ -41,12 +53,12 @@
         option = {
             //标题
             title: {
-                text: '从业人数/GDP分析',
+               /* text: '从业人数/GDP分析',
                 x: 'center',
                 textStyle: {
                     color: '#fff',
                     fontSize: "25"
-                }
+                }*/
             },
             toolbox: {
                 feature: {
