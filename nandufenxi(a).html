@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,19 @@
     <script src="js/echarts.min.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/dataTool.js"></script>
+    <link rel="stylesheet" href="css/container.css">
+
 </head>
 
 <body>
-    <div class="container" style="height: 90% ;width: 90%;padding-left: 110px;padding-top: 40px;">
-        <div id="main" style="width: 750px; height:550px;"></div>
-    </div>
+<!--<div class="container" style="height: 90% ;width: 90%;padding-left: 110px;padding-top: 40px;">
+    <div id="main" style="width: 750px; height:550px;"></div>
+</div>-->
+
+<div class="glass-container" id="glass">
+    <div id="main" style="width: 1000px; height:550px;"></div>
+</div>
+
 </body>
 <script>
     get();
@@ -54,11 +61,11 @@
                         }
                     },
                     dataZoom: [{
-                            type: 'slider', // 可以用 'inside' 或 'slider' 类型
-                            xAxisIndex: [0], // 控制第一个x轴
-                            start: 0, // 数据窗口范围的起始百分比
-                            end: 100 // 数据窗口范围的结束百分比
-                        },
+                        type: 'slider', // 可以用 'inside' 或 'slider' 类型
+                        xAxisIndex: [0], // 控制第一个x轴
+                        start: 0, // 数据窗口范围的起始百分比
+                        end: 100 // 数据窗口范围的结束百分比
+                    },
                         {
                             type: 'slider',
                             yAxisIndex: [0],
@@ -92,23 +99,23 @@
                         }
                     },
                     series: [{
-                            name: 'boxplot',
-                            type: 'boxplot',
-                            data: preparedData.boxData,
-                            tooltip: {
-                                formatter: function (param) {
-                                    return [
-                                        param.name + ': ',
-                                        'upper: ' + Math.round(param.data[5] * 1000) / 1000,
-                                        'Q3: ' + Math.round(param.data[4] * 1000) / 1000,
-                                        'median: ' + Math.round(param.data[3] * 1000) /
-                                        1000,
-                                        'Q1: ' + Math.round(param.data[2] * 1000) / 1000,
-                                        'lower: ' + Math.round(param.data[1] * 1000) / 1000
-                                    ].join('<br/>');
-                                }
+                        name: 'boxplot',
+                        type: 'boxplot',
+                        data: preparedData.boxData,
+                        tooltip: {
+                            formatter: function (param) {
+                                return [
+                                    param.name + ': ',
+                                    'upper: ' + Math.round(param.data[5] * 1000) / 1000,
+                                    'Q3: ' + Math.round(param.data[4] * 1000) / 1000,
+                                    'median: ' + Math.round(param.data[3] * 1000) /
+                                    1000,
+                                    'Q1: ' + Math.round(param.data[2] * 1000) / 1000,
+                                    'lower: ' + Math.round(param.data[1] * 1000) / 1000
+                                ].join('<br/>');
                             }
-                        },
+                        }
+                    },
                         {
                             name: 'mean',
                             type: 'scatter',
@@ -130,7 +137,8 @@
 
                 myChart.setOption(option);
             },
-            error: function (json) {}
+            error: function (json) {
+            }
         });
     }
 </script>
